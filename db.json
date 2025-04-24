@@ -1,0 +1,30 @@
+{
+  "posts": [
+
+    {
+      "id": 1,
+      "titre": "aaaaa",
+      "auteur": "Amine"
+    },
+    {
+      "id": 2,
+      "titre": "Node.js",
+      "auteur": "Mohit"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "Great post!",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "Informative!",
+      "postId": 2
+    }
+  ],
+  "profile": {
+    "name": "Amit Kumar"
+  }
+}

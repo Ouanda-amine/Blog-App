@@ -1,0 +1,30 @@
+<body>
+<div class="container">
+
+
+
+  </div>
+  <div class="row">
+    <div class="col-sm-6 mb-4" *ngFor="let p of allposts">
+      <div class="card" id="mycard">
+        <div class="row no-gutters">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <p>{{p.id}}</p>
+              <h6 id="lg">{{p.titre}}</h6>
+            </div>
+          </div>
+          <div class="col-md-3" style="position: relative" >
+            <a href="{{p.auteur}}" target="_blank">
+
+              <button class="btn btn-outline-primary" id="bttn">Explorez -></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
