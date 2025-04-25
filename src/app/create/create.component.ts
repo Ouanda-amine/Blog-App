@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import {PostServiceService} from '../post-service.service';
 import {Router} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-create',
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './create.component.html',
   styleUrl: './create.component.css'
 })
 export class CreateComponent {
-  fdata ={
+  data ={
     titre: "",
     auteur: "",
     image : "",
@@ -23,7 +26,7 @@ export class CreateComponent {
 
 
   create(){
-    this.service.createPost(this.fdata).subscribe({
+    this.service.createPost(this.data).subscribe({
       next:(data)=>{
         this.router.navigate(['/accueil'])
       }
