@@ -5,8 +5,8 @@ import {NgForOf} from '@angular/common';
 
 interface Post {
   id: number;
-  titre: string; // Au lieu de 'titre'
-  auteur: string; // Au lieu de 'auteur'
+  titre: string;
+  auteur: string;
 }
 
 @Component({
@@ -25,7 +25,11 @@ export class AccueilComponent  implements  OnInit{
 
   ngOnInit(): void {
     this.service.getAll().subscribe(data=>
+
+
       this.allposts = data
+
+
     )
   }
 
