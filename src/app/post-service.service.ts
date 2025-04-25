@@ -12,4 +12,7 @@ export class PostServiceService {
   getAll() : Observable<any>{
     return this.http.get("http://localhost:3000/posts")
   }
+  createPost(data : any):Observable<any> {
+    return this.http.post("http://localhost:3000/posts",data)
+  }
 }
