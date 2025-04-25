@@ -7,6 +7,9 @@ interface Post {
   id: number;
   titre: string;
   auteur: string;
+  image : string
+  categorie : string
+  discription : string
 }
 
 @Component({
@@ -21,16 +24,23 @@ export class AccueilComponent  implements  OnInit{
 
   allposts : Post[] = []
 
+  postfilter: Post[]=[]
+
   constructor( private  service : PostServiceService , private router : Router) {}
 
   ngOnInit(): void {
-    this.service.getAll().subscribe(data=>
+    this.service.getAll().subscribe(data=>{
 
-
-      this.allposts = data
-
-
+      this.allposts = data;
+      this.postfilter=[...this.allposts]
+    }
     )
+  }
+  filtreposts(search: String):void {
+    this.postfilter=this.allposts.filter((post)=>
+      post.categorie.toLowerCase().includes(search.toLowerCase())
+    );
+
   }
 
 

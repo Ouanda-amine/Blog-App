@@ -1,29 +1,39 @@
+
 <body>
-<h1>aaaaaaaaaaaaaaa</h1>
+
 <div class="container">
-  </div>
-  <div class="row">
-    <div class="col-sm-6 mb-4" *ngFor="let p of allposts">
-      <div class="card" id="mycard">
-        <div class="row no-gutters">
-          <div class="col-md-3">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2> Dashboard</h2>
+   <div class="row">
+     <button class="btn btn-outline-light col-6 " (click)="filtreposts('football')">Football</button>
+     <button class="btn btn-outline-light col-6" (click)="filtreposts('tennis')">Tennis</button>
+   </div>
+    <button class="col-12 btn btn-outline-light" >Basket-Ball</button>
+  </aside>
 
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <p>{{p.id}}</p>
-              <h6 id="lg">{{p.titre}}</h6>
-            </div>
-          </div>
-          <div class="col-md-3" style="position: relative" >
-            <a href="{{p.auteur}}" target="_blank">
 
-              <button class="btn btn-outline-primary" id="bttn">Explorez -></button>
-            </a>
-          </div>
+  <main class="main-content">
+    <h1>Bienvenue sur le tableau de bord</h1>
+
+    <div class="card-grid">
+      <div class="card"  *ngFor="let p of postfilter">
+        <img src="/{{p.image}}" alt="Image 1">
+        <h3 id="titre">{{ p.titre }}</h3>
+        <p id="dis">{{ p.discription }}</p>
+        <div class="row">
+          <p class="col-6" id="aut">{{ p.auteur }}</p>
+          <p class="col-6" id="cat">{{ p.categorie }}</p>
+
         </div>
       </div>
+
+
+
+
     </div>
-  </div>
+  </main>
+</div>
 
 </body>
+
