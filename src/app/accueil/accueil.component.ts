@@ -5,8 +5,11 @@ import {NgForOf} from '@angular/common';
 
 interface Post {
   id: number;
-  titre: string; // Au lieu de 'titre'
-  auteur: string; // Au lieu de 'auteur'
+  titre: string;
+  auteur: string;
+  image : string
+  categorie : string
+  discription : string
 }
 
 @Component({

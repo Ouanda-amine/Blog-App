@@ -1,17 +1,15 @@
+
 <body>
 
 <div class="container">
   <!-- Sidebar -->
   <aside class="sidebar">
-    <h2>Dashboard</h2>
-    <ul>
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#">Articles</a></li>
-      <li><a href="#">Dossiers</a></li>
-      <li><a href="#">Paramètres</a></li>
-      <!-- New Sports Category -->
-      <li><a href="#">Sports</a></li>
-    </ul>
+    <h2> Dashboard</h2>
+   <div class="row">
+     <button class="btn btn-outline-light col-6 ">Football</button>
+     <button class="btn btn-outline-light col-6">Tennis</button>
+   </div>
+    <button class="col-12 btn btn-outline-light">Basket-Ball</button>
   </aside>
 
   <!-- Main Content -->
@@ -19,10 +17,15 @@
     <h1>Bienvenue sur le tableau de bord</h1>
 
     <div class="card-grid">
-      <div class="card">
-        <img src="https://via.placeholder.com/200x100" alt="Image 1">
-        <h3>Statistique 1</h3>
-        <p>Description rapide de cette statistique.</p>
+      <div class="card"  *ngFor="let p of allposts">
+        <img src="/{{p.image}}" alt="Image 1">
+        <h3 id="titre">{{ p.titre }}</h3>
+        <p id="dis">{{ p.discription }}</p>
+        <div class="row">
+          <p class="col-6" id="aut">{{ p.auteur }}</p>
+          <p class="col-6" id="cat">{{ p.categorie }}</p>
+
+        </div>
       </div>
 
       <div class="card">
@@ -41,3 +44,4 @@
 </div>
 
 </body>
+
